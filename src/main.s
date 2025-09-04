@@ -1,24 +1,26 @@
 extern      ft_strlen
+extern      ft_write
+extern      ft_strcpy
 
 section     .rodata
-    hello   db "Bonjour les amies!", 10, 0
+    hello_str   db "allo JULO !", 0x0A, 0
 
 section     .bss
-    len_hello   resd 1
+    dest_str    resb 100
 
 section     .text
     global  _start
 
 _start:
-    mov     rdi, hello
+    mov     rdi, dest_str
+    mov     rsi, hello_str
+    call    ft_strcpy
     call    ft_strlen
-    mov     rdx, rax
-
-    mov     rax, 1 ; sys_write
     mov     rdi, 1 ; stdout
-    mov     rsi, hello
-    syscall
+    mov     rsi, dest_str
+    mov     rdx, rax
+    call    ft_write
 
     mov     rax, 60 ; sys_exit
-    mov     rdi, rdx ; choosing exit_code (slower)
+    xor     rdi, rdi
     syscall

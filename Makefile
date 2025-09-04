@@ -5,10 +5,10 @@ NAME=libasm
 OBJ_DIR=obj/
 SRC_DIR=src/
 
-SRCS= $(addprefix $(SRC_DIR), main.s ft_strlen.s)
+SRCS= $(addprefix $(SRC_DIR), main.s ft_strlen.s ft_write.s ft_strcpy.s)
 OBJS= $(patsubst $(SRC_DIR)%.s, $(OBJ_DIR)%.o, $(SRCS))
 
-ASMFLAGS=-f elf64
+ASMFLAGS=-f elf64 -g
 LDFLAGS=
 
 $(OBJ_DIR)%.o: $(SRC_DIR)%.s

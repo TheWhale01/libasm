@@ -3,6 +3,8 @@ section .text
 
 ft_strlen:
     xor rax, rax
+    cmp rdi, 0x0
+    je end
     call loop
 
 loop:
