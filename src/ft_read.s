@@ -1,9 +1,9 @@
 section .text
-    global ft_write
+    global ft_read
     extern __errno_location
 
-ft_write:
-    mov rax, 1 ; sys_write
+ft_read:
+    xor rax, rax
     syscall
     cmp rax, 0
     js error

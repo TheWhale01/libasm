@@ -1,3 +1,6 @@
 obj/
 libasm
+libasm.a
 vgcore*
+*.json
+.cache

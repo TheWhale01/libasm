@@ -11,6 +11,6 @@ First project after the common core completion. It is a first at ASM_x64 develop
  ## Setup
 
 ```bash
-make # [libasm|all|re|clean|fclean]
+make # [libasm|all|re|clean|fclean|exec|re_exec]
 ./libasm
 ```

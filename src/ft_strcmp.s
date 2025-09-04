@@ -7,17 +7,19 @@ ft_strcmp:
     call loop
 
 loop:
-    mov al, byte [rdi + rcx]
-    mov bl, byte [rsi + rcx]
-    cmp al, 0x0
+    mov r8b, byte [rdi + rcx]
+    mov r9b, byte [rsi + rcx]
+    cmp r8b, 0x0
     je end
-    cmp bl, 0x0
+    cmp r9b, 0x0
     je end
-    cmp al, bl
+    cmp r8b, r9b
     jne end
     inc rcx
     jmp loop
 
 end:
-    sub al, bl
+    movzx rax, r8b
+    movzx r9, r9b
+    sub rax, r9
     ret
