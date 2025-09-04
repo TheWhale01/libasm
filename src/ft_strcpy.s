@@ -6,9 +6,9 @@ ft_strcpy:
     call loop
 
 loop:
-    cmp byte [rsi + rcx], 0x0
-    je end
     mov r8b, byte [rsi + rcx]
+    cmp r8b, 0x0
+    je end
     mov byte [rdi + rcx], r8b
     inc rcx
     jmp loop
