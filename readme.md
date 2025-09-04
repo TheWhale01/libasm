@@ -5,8 +5,8 @@ First project after the common core completion. It is a first at ASM_x64 develop
 ## Requirements
 
  - nasm
- - ld
  - make
+ - clang
 
  ## Run
 
